@@ -18,7 +18,6 @@ example - z.sh hello_world.zig
 git clone https://github.com/anuragts/z.sh.git
 
 cd z.sh
-
 ```
 ##### Copy Z.sh to global path
 
