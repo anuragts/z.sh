@@ -33,9 +33,10 @@ sudo chmod +x <global path>/z.sh
 
 example - sudo chmod +x /usr/local/bin/z.sh
 ```
-##### Run 
+##### Run & test
 
 ```
-z.sh <filename with extension>
+z.sh hello.zig
 ```
 
+Successful test will return `Hello World` .
