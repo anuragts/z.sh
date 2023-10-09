@@ -32,9 +32,16 @@ if [ -f "$filename" ]; then
   # Run the compiled executable
   "./$filename_without_extension"
 
-  # Remove the executable and object file
-  rm -f "$filename_without_extension"
-  rm -f "$filename_without_extension.o"
+  # Check the exit status of the program
+  if [ $? -eq 0 ]; then
+    # Remove the executable and object file
+    rm -f "$filename_without_extension"
+    rm -f "$filename_without_extension.o"
+  else
+    echo `\n Program execution failed.\n`
+    exit 1
+
+  fi
 
 else
   # Search for the file in directories listed in PATH
@@ -57,12 +64,18 @@ else
     # Run the compiled executable
     "$filename_without_extension"
 
-    # Remove the executable and object file
-    rm -f "$filename_without_extension"
-    rm -f "$filename_without_extension.o"
+    # Check the exit status of the program
+    if [ $? -eq 0 ]; then
+      # Remove the executable and object file
+      rm -f "$filename_without_extension"
+      rm -f "$filename_without_extension.o"
+    else
+      echo `\n Program execution failed. \n`
+      exit 1
+    fi
 
   else
-    echo "Error: File '$filename' not found in the current directory or in PATH directories."
+    echo ` \n Error: File '$filename' not found in the current directory or in PATH directories. \n `
     exit 1
   fi
 fi
