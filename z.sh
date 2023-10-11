@@ -38,9 +38,8 @@ if [ -f "$filename" ]; then
     rm -f "$filename_without_extension"
     rm -f "$filename_without_extension.o"
   else
-    echo `\n Program execution failed.\n`
+    echo "Program execution failed."
     exit 1
-
   fi
 
 else
@@ -70,12 +69,12 @@ else
       rm -f "$filename_without_extension"
       rm -f "$filename_without_extension.o"
     else
-      echo `\n Program execution failed. \n`
+      echo "Program execution failed."
       exit 1
     fi
 
   else
-    echo ` \n Error: File '$filename' not found in the current directory or in PATH directories. \n `
+    echo "Error: File '$filename' not found in the current directory or in PATH directories."
     exit 1
   fi
 fi
